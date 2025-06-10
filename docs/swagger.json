@@ -1,0 +1,57 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Service For API TRANSLATE",
+        "title": "API TRANSLATE",
+        "contact": {},
+        "version": "1.0"
+    },
+    "paths": {
+        "/translate-text-libre": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Translate"
+                ],
+                "parameters": [
+                    {
+                        "description": "PARAM",
+                        "name": "parameter",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.Translate"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    },
+    "definitions": {
+        "model.Translate": {
+            "type": "object",
+            "properties": {
+                "from": {
+                    "type": "string",
+                    "example": "id"
+                },
+                "text": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "to": {
+                    "type": "string",
+                    "example": "en"
+                }
+            }
+        }
+    }
+}

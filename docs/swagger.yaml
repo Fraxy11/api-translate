@@ -1,0 +1,37 @@
+definitions:
+  model.Translate:
+    properties:
+      from:
+        example: id
+        type: string
+      text:
+        items:
+          type: string
+        type: array
+      to:
+        example: en
+        type: string
+    type: object
+info:
+  contact: {}
+  description: Service For API TRANSLATE
+  title: API TRANSLATE
+  version: "1.0"
+paths:
+  /translate-text-libre:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: PARAM
+        in: body
+        name: parameter
+        required: true
+        schema:
+          $ref: '#/definitions/model.Translate'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Translate
+swagger: "2.0"
